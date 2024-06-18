@@ -53,19 +53,43 @@ $hotels = [
 </head>
 
 <body>
-    <h1>Lista degli Hotels</h1>
-    <p>
+    <h1 class="text-center mt-3">Lista degli Hotels</h1>
+
+    <table class="table table-hover table-dark mt-5">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrizione</th>
+                <th>Parcheggio</th>
+                <th>Voto</th>
+                <th>Distanza dal centro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($hotels as $hotel) : ?>
+                <tr>
+                    <td><?php echo $hotel['name'] ?></td>
+                    <td><?php echo $hotel['description'] ?></td>
+                    <td><?php echo $hotel['parking'] ?></td>
+                    <td><?php echo $hotel['vote'] ?></td>
+                    <td><?php echo $hotel['distance_to_center'] ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
+    <!-- <p>
         <?php
         // inizio del ciclo principale per scorrere tutti gli hotel 
-        foreach ($hotels as $hotel) {
-            // inizia del ciclo interno per scorrere ogn attributo di un singolo hotel 
-            foreach ($hotel as $key => $value) {
-                // stampa la chiave e il valore dell'attributo corrente dell'hotel
-                echo $key . ' : ' . $value . '<br>';
-            }
-        }
+        // foreach ($hotels as $hotel) {
+        // inizia del ciclo interno per scorrere ogn attributo di un singolo hotel 
+        // foreach ($hotel as $key => $value) {
+        // stampa la chiave e il valore dell'attributo corrente dell'hotel
+        //         echo $key . ' : ' . $value . '<br>';
+        //     }
+        // }
         ?>
-    </p>
+    </p> -->
 </body>
 
 </html>
